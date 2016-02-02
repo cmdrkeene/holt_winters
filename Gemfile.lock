@@ -6,7 +6,12 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    ast (2.2.0)
     diff-lcs (1.1.3)
+    parser (2.3.0.2)
+      ast (~> 2.2)
+    powerpack (0.1.1)
+    rainbow (2.1.0)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
@@ -15,6 +20,12 @@ GEM
     rspec-expectations (2.6.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.6.0)
+    rubocop (0.36.0)
+      parser (>= 2.3.0.0, < 3.0)
+      powerpack (~> 0.1)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.7)
+    ruby-progressbar (1.7.5)
 
 PLATFORMS
   ruby
@@ -22,6 +33,7 @@ PLATFORMS
 DEPENDENCIES
   holt_winters!
   rspec (~> 2.6.0)
+  rubocop
 
 BUNDLED WITH
    1.11.2

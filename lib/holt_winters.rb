@@ -61,7 +61,9 @@ module HoltWinters
 
       (2..(y.size - 1)).each do |i|
         # Calculate overall smoothing
+        # rubocop:disable all
         if (i - period) >= 0
+        # rubocop:enable all
          st[i] = alpha * y[i] / it[i - period] + (1.0 - alpha) * (st[i - 1] + bt[i - 1])
         else
           st[i] = alpha * y[i] + (1.0 - alpha) * (st[i - 1] + bt[i - 1])

@@ -1,5 +1,5 @@
 # -*- mode: ruby; encoding: utf-8 -*-
-$:.push File.expand_path('../lib', __FILE__)
+$LOAD_PATH.push File.expand_path('../lib', __FILE__)
 require 'holt_winters/version'
 
 Gem::Specification.new do |s|
@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Brandon Keene']
   s.email       = ['bkeene@gmail.com']
   s.homepage    = ''
-  s.summary     = %q{Holt-Winters Triple Exponential Smoothing}
+  s.summary     = 'Holt-Winters Triple Exponential Smoothing'
 
   s.rubyforge_project = 'holt_winters'
 

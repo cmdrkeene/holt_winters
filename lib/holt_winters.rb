@@ -40,7 +40,7 @@ module HoltWinters
 
       seasonal = seasonal_indicies(y, period, seasons)
 
-      holt_winters(y, a0, b0, alpha, beta, gamma, seasonal, period, m);
+      holt_winters(y, a0, b0, alpha, beta, gamma, seasonal, period, m)
     end
 
     def holt_winters(y, a0, b0, alpha, beta, gamma, seasonal, period, m)
@@ -61,8 +61,10 @@ module HoltWinters
 
       (2..(y.size - 1)).each do |i|
         # Calculate overall smoothing
+        # rubocop:disable all
         if (i - period) >= 0
-         st[i] = alpha * y[i] / it[i - period] + (1.0 - alpha) * (st[i - 1] + bt[i - 1])
+        # rubocop:enable all
+          st[i] = alpha * y[i] / it[i - period] + (1.0 - alpha) * (st[i - 1] + bt[i - 1])
         else
           st[i] = alpha * y[i] + (1.0 - alpha) * (st[i - 1] + bt[i - 1])
         end
@@ -86,10 +88,9 @@ module HoltWinters
 
     # See: http://robjhyndman.com/researchtips/hw-initialization/
     # 1st period's average can be taken. But y[0] works better.
-    def initial_level(y, period)
+    def initial_level(y, _period)
       y.first
     end
-
 
     # See: http://www.itl.nist.gov/div898/handbook/pmc/section4/pmc435.htm
     def initial_trend(y, period)
@@ -101,7 +102,6 @@ module HoltWinters
 
       sum / (period * period)
     end
-
 
     # See: http://www.itl.nist.gov/div898/handbook/pmc/section4/pmc435.htm
     def seasonal_indicies(y, period, seasons)

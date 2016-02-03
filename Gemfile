@@ -1,3 +1,3 @@
 # -*- mode: ruby; -*-
-source :rubygems
+source 'https://rubygems.org'
 gemspec
